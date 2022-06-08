@@ -1,0 +1,791 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('fonts/Montserrat/static/Montserrat-Regular') format('ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('fonts/Montserrat/static/Montserrat-SemiBold') format('ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Montserrat-Black';
+    src: url('fonts/Montserrat/static/Montserrat-Black') format('ttf');
+    font-weight: 900;
+}
+
+* {
+    margin: 0;
+    font-family: 'Montserrat-Regular','sans-serif';
+    font-size: 1em;
+}
+a {
+    text-decoration: none;
+}
+a:hover{
+    color: #79BAAB;
+}
+
+h1 {
+    font-family: 'Montserrat-Black';
+    font-weight: 900;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 1.5em;
+    font-family: 'Montserrat-Black';
+    text-transform: uppercase;
+}
+h3 {
+    font-family: 'Montserrat-Black';
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+/*--------------------HEADER--------------------*/
+header {
+    grid-area: header;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+header div {
+    vertical-align: middle;
+}
+header div img {
+    max-width: 200px;
+}
+nav {
+    padding-top: 10px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+    list-style: none;
+    padding-left: 10px;
+}
+nav ul li a {
+    color: #2A2A2A;
+    font-family: 'Montserrat-Bold';
+    font-size: 0.9em;
+}
+nav ul li a[class="activo"] {
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+    padding-bottom: 5px;
+}
+/*----------------------------------------------*/
+
+/*---------------NEWSLETTER---------------------*/
+div[class="newsletter"] {
+    grid-area: NL;
+    text-align: center;
+    background-image: url(img/doodle.png);
+    background-color: rgba(121, 186, 171,0.9);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.newsletter h1 {
+    font-family: 'Montserrat-Black';
+    text-transform: uppercase;
+    font-size:2.5em;
+}
+form {
+    display: inline-block;
+    margin-top: 10px;
+}
+.newsletter input[type="button"] {
+    border-style: solid;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #DC4A23;
+    border-color: #DC4A23;
+    color: white;
+}
+.newsletter input[type="button"]:hover {
+    background-color: #EB9781;
+    border-color: #EB9781;
+    color: white;
+}
+input[type="email"] {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(121, 186, 171);
+    color: rgb(121, 186, 171);
+    height: 40px;
+    width: 300px;
+    padding-left: 10px;
+}
+/*----------------------------------------------*/
+
+/*-----------------FOOTER-----------------------*/
+footer {
+    grid-area: footer;
+    background-color: black;
+    color: white;
+}
+footer div {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer a {
+    color: white;
+}
+footer a:hover {
+    color: #79BAAB;
+}
+footer div ul,
+footer div div,
+footer div p {
+    display: inline-block;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*----------------------------------------------*/
+
+/*-------------------INDEX-----------------------*/
+.index {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "header"
+        "b1"
+        "b2"
+        "b3"
+        "b4"
+        "NL"
+        "footer";
+}
+
+/* BLOQUE 1*/
+#index_1 {
+    grid-area: b1;
+    display: flex;
+    background-image: url(img/knife-bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+#index_1 div {
+    text-align: center;
+}
+
+
+input[type="text"] {
+    background-image: url(img/icons/search.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 5px;
+    padding-left: 30px;
+    border-color: #79BAAB;
+    border-style: solid;
+    color: #2A2A2A;
+    height: 30px;
+    width: 250px;
+}
+
+/* BLOQUE 2 */
+#index_2 {
+    grid-area: b2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #FFF7E8;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+        "title title"
+        "b1    b2   "
+        "c1    c2   "
+        "b3    b4   "
+        "c3    c4   ";
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 600;
+}
+
+#index_2 h2,
+#index_3 h2 {
+    grid-area: title;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 100%;
+    border-bottom: 3px solid;
+    line-height: 0.1em;
+    margin: 20px 0 30px;
+    text-align: center;
+}
+#index_2 h2 span {
+    padding: 0 10px;
+    background-color: #FFF7E8;
+}
+#index_2 :nth-child(2) {
+    grid-area: b1;
+}
+#index_2 :nth-child(3) {
+    grid-area: c1;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+#index_2 :nth-child(4) {
+    grid-area: b2;
+}
+
+#index_2 :nth-child(5) {
+    grid-area: c2;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+#index_2 :nth-child(6) {
+    grid-area: b3;
+}
+#index_2 :nth-child(7) {
+    grid-area: c3;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+#index_2 :nth-child(8) {
+    grid-area: b4;
+}
+#index_2 :nth-child(9) {
+    grid-area: c4;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+#index_2 a {
+    color: black;
+}
+
+/* BLOQUE 3 */
+#index_3 {
+    grid-area: b3;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #FFF7E8;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#index_3 div {
+    background-image: url(img/shop-bg.jpg);
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#index_3 div div {
+    background-color: white;
+    background-image: none;
+    line-height: 1.2;
+    padding-top: 50px;
+    padding-bottom: 50px;
+     padding-left: 20%;
+    padding-right: 20%
+}
+#index_3 div div p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#index_3 h2 span {
+    padding: 0 10px;
+    background-color: white;
+}
+#index_3 a {
+    color: #DC4A23;
+    font-family: 'Montserrat-Bold';
+}
+
+/* BLOQUE 4*/
+#index_4 {
+    grid-area: b4;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #FFF7E8;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: auto auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "text "
+        "img";
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#index_4 div {
+    grid-area: text;
+    text-align: left;
+    padding-right:50px;
+    justify-self: center;
+}
+#index_4 img {
+    grid-area: img;
+}
+
+#index_4 h2 {
+    font-size: 1.2em;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+#index_4 h3 {
+    font-size: 2em;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+#index_4 input[type="button"] {
+    background-color: white;
+    border-color: #79BAAB;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    color: #79BAAB;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    height: 50px;
+}
+
+/*-----------------------------------------------*/
+
+/*------------------RECIPES----------------------*/
+.recipes {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "header"
+        "b1"
+        "NL"
+        "footer";
+}
+.recipes main{
+    grid-area: b1;
+    display: grid;
+    grid-template-rows: auto  minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto auto ;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-gap: 20px;
+    grid-template-areas:
+        "title title"
+        "b1       b2"
+        "c1       c2"
+        "b3       b4"
+        "c3       c4"
+        "b5       b6"
+        "c5       c6"
+        "b7       b8"
+        "c7       c8"
+        "b9      b10"
+        "c9      c10"
+        "b11     b12"
+        "c11     c12"
+        "pag     pag";
+        background-color: #FFF7E8;
+        text-align: left;
+        padding: 10px;
+}
+
+#title{
+    grid-area: title;
+    line-height: 1.5;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/*-------------FILTERS----------*/
+#filters{
+    grid-area: filter;
+    background-color: white;
+    margin: 0px;
+    padding-top:20px;
+    padding-left:10px;
+    display: none;
+    overflow: hidden;
+}
+
+.recipes fieldset,
+.shop fieldset {
+    border-style: none;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.recipes main li,
+.shop main li {
+    display: block;
+    padding-left: 0px;
+    padding-bottom: 2px;
+}
+
+.recipes input[type="text"],
+.shop input[type="text"] {
+    border-radius: 5px;
+    width:80%;
+    height:50px;
+}
+
+/*------------------------------*/
+
+main img,
+main iframe {
+    width: 100%;
+}
+
+#b1 {
+    grid-area: b1;
+}
+#c1 {
+    grid-area: c1;
+}
+#b2 {
+    grid-area: b2;
+}
+#c2 {
+    grid-area: c2;
+}
+#b3 {
+    grid-area: b3;
+}
+#c3 {
+    grid-area: c3;
+}
+#b4 {
+    grid-area: b4;
+}
+#c4 {
+    grid-area: c4;
+}
+#b5 {
+    grid-area: b5;
+}
+#c5 {
+    grid-area: c5;
+}
+#b6 {
+    grid-area: b6;
+}
+#c6 {
+    grid-area: c6;
+}
+#b7 {
+    grid-area: b7;
+}
+#c7 {
+    grid-area: c7;
+}
+#b8 {
+    grid-area: b8;
+}
+#c8 {
+    grid-area: c8;
+}
+#b9 {
+    grid-area: b9;
+}
+#c9 {
+    grid-area: c9;
+}
+#b10 {
+    grid-area: b10;
+}
+#c10 {
+    grid-area: c10;
+}
+ #b11 {
+    grid-area: b11;
+}
+#c11 {
+    grid-area: c11;
+}
+#b12 {
+    grid-area: b12;
+}
+ #c12 {
+    grid-area: c12;
+}
+.recipes main a,
+.shop main a {
+    text-decoration: none;
+    color: #2A2A2A;
+    font-family: 'Montserrat-Bold';
+    text-transform: uppercase;
+}
+#pag {
+    grid-area: pag;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#pag a {
+    text-decoration: none;
+    color: #79BAAB;
+}
+#pag a[class="active"] {
+    color: #2A2A2A;
+}
+/*-----------------------------------------------*/
+
+/*--------------------SHOP-----------------------*/
+.shop {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "header"
+        "b1"
+        "NL"
+        "footer";
+}
+.shop main{
+    grid-area: b1;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-gap: 20px;
+    grid-template-areas:
+        "title title"
+        "b1       b2"
+        "c1       c2"
+        "b3       b4"
+        "c3       c4"
+        "b5       b6"
+        "c5       c6"
+        "b7       b8"
+        "c7       c8"
+        "b9      b10"
+        "c9      c10"
+        "pag     pag";
+    background-color: #FFF7E8;
+    text-align: left;
+    padding: 10px;
+}
+/*-----------------------------------------------*/
+
+/*-------------------VIDEOS----------------------*/
+.videos {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "header"
+        "b1"
+        "NL"
+        "footer";
+}
+.videos main{
+    grid-area: b1;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 20px;
+    grid-template-areas:
+        "title"
+        "b1"
+        "c1"
+        "b2"
+        "c2"
+        "b3"
+        "c3"
+        "b4"
+        "c4"
+        "b5"
+        "c5"
+        "b6"
+        "c6";
+    background-color: #FFF7E8;
+    text-align: left;
+    padding: 10px;
+}
+.videos main div {
+    background-color: white;
+}
+.videos #title {
+    background-color: #FFF7E8;
+    text-align: left;
+}
+
+/*-----------------------------------------------*/
+
+@media (min-width: 1062px) {
+    * {
+        font-size: 1.1em;
+    }
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 2.5em;
+    }
+
+/*--------------------HEADER---------------------*/
+    header {
+        padding-left: 200px;
+        padding-right: 200px;
+        text-align: left;
+    }   
+    header div {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        vertical-align: middle;
+    }
+    nav {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        padding-top: 0px;
+        top: calc(25%);
+    }
+/*-----------------------------------------------*/
+
+/*-----------------FOOTER-----------------------*/
+footer {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+footer div {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+footer div p {
+    display: inline-block;
+    text-align: left;
+}
+footer div ul,
+footer div div {
+    display: inline-block;
+    text-align: right;
+}
+/*----------------------------------------------*/
+
+/*------------------INDEX-----------------------*/
+
+    /* BLOQUE 1 */
+    #index_1 {
+        height: 500px;
+    }
+
+    /* BLOQUE 2 */
+    #index_2 {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        grid-gap: 10px;
+        grid-template-areas:
+            "title title title title"
+            "b1    b2    b3    b4   "
+            "c1    c2    c3    c4   ";
+            padding-left: min(300px,20%);
+            padding-right:min(300px,20%);
+    }
+
+    /* BLOQUE 3 */
+    #index_3 {
+        padding-left: min(300px,20%);
+        padding-right:min(300px,20%);
+    }
+
+    #index_3 div {
+        padding-left: min(400px,10%);
+        padding-right:min(400px,10%);  
+    }
+
+    /* BLOQUE 4*/
+    #index_4 {
+        grid-template-rows: auto;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "text img";
+            padding-left: min(300px,20%);
+            padding-right:min(300px,20%);
+    }
+    /*----------------------------------------------*/
+
+    /*------------------RECIPES----------------------*/
+    .recipes main {
+        grid-template-rows:  auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto auto;
+        grid-template-columns: 25% minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "title title title title"
+            "filter b1  b2   b3  "
+            "filter c1  c2   c3  "
+            "filter b4  b5   b6"
+            "filter c4  c5   c6"
+            "filter b7  b8   b9"
+            "filter c7  c8   c9"
+            "filter b10 b11  b12"
+            "filter c10 c11  c12"
+            "filter pag pag  pag";
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    #title {
+        text-align: left;
+    }
+
+    #filters{
+        display: block;
+    }
+    /*-----------------------------------------------*/
+
+    /*--------------------SHOP-----------------------*/
+    .shop main {
+        grid-template-rows: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto auto;
+        grid-template-columns: 25% minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "title title title title"
+            "filter b1  b2   b3  "
+            "filter c1  c2   c3  "
+            "filter b4  b5   b6"
+            "filter c4  c5   c6"
+            "filter b7  b8   b9"
+            "filter c7  c8   c9"
+            "filter pag pag  pag";
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+    /*-----------------------------------------------*/
+
+    /*--------------------VIDEOS-----------------------*/
+    .videos main{
+        grid-template-rows: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "title title"
+            "b1 b2"
+            "c1 c2"
+            "b3 b4"
+            "c3 c4"
+            "b5 b6"
+            "c5 c6";
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+    /*-----------------------------------------------*/
+}
